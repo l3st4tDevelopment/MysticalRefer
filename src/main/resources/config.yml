@@ -1,0 +1,39 @@
+## Configuration version. Please do not change this.
+config-version: 1
+
+code-settings:
+  ## Type of generator to use for generating codes.
+  ## LETTERS - Only use letters for generating the code.
+  ## NUMBERS - Only use numbers for generating the code.
+  ## BOTH - Use both letters and numbers.
+  type: NUMBERS
+  ## Length of the generated codes. A maximum of 32 is allowed.
+  length: 8
+  ## Maximum amount of uses per code. Use -1 to disable.
+  max-uses-per-code: 25
+
+storage-settings:
+  ## What storage type do you want to use?
+  ## Available: MYSQL, SQLITE
+  type: SQLITE
+  ## MySQL specific settings.
+  mysql:
+    host: localhost
+    port: 3306
+    username: root
+    password: admin
+    database: mysticalrefer
+    prefix: db_
+
+time-settings:
+  ## Interval between autosaves. In seconds.
+  auto-save: 900
+
+reward-settings:
+  # These rewards are given to the player who is referred by another.
+  referred:
+    - 'eco give %player% 500'
+  # These rewards are given to the player who refers someone.
+  # These are currently executed even if the player is offline.
+  referral:
+    - 'eco give %player% 500'

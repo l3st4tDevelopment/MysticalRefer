@@ -1,0 +1,29 @@
+## Configuration version. Please do not change this.
+config-version: 1
+
+## Messages use the MiniMessage format.
+## More information here: https://docs.advntr.dev/minimessage/format
+messages:
+  referral-info:
+    - '<green><bold>Referral System'
+    - ''
+    - '<white>Your code is: <yellow>%code%'
+    - '<white>Share this code with others to earn rewards!'
+    - '<white>%players% have used your code.'
+    - ''
+    - '<white>To redeem a code, type /refer <code>.'
+  already-used-code: "<red>You have already used a referral code!"
+  illegal-characters: "<red>Illegal characters in the code!"
+  invalid-code: "<red>That code is invalid!"
+  max-players-exceeded: "<red>That code has exceeded the amount of maximum redeems!"
+  code-redeemed: "<green>Code redeemed! Rewards received!"
+  referred-player: "<green>You have referred %player% and received rewards!"
+  admin-help:
+    - '<red><bold>Referral System Admin'
+    - ''
+    - '<white>/referadmin help'
+    - '<white>/referadmin reset <Player>'
+    - ''
+  invalid-player: "<red>That player is not valid."
+  player-reset: "<green>Player reset!"
+  cannot-refer-yourself: "<red>Cannot refer yourself!"
