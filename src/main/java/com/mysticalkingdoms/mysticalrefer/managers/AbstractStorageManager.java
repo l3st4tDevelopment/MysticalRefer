@@ -31,7 +31,13 @@ public abstract class AbstractStorageManager {
     public void createPlayer(Player player) {
         if (playerMap.containsKey(player.getUniqueId())) return;
 
-        ReferPlayer referPlayer = ReferPlayer.createNewPlayer(player, plugin.generateCode());
+        String code = plugin.generateCode();
+        if (codeMap.containsKey(code)) {
+            createPlayer(player);
+            return;
+        }
+
+        ReferPlayer referPlayer = ReferPlayer.createNewPlayer(player, code);
         playerMap.put(player.getUniqueId(), referPlayer);
         codeMap.put(referPlayer.getReferralCode(), referPlayer);
         createAccount(referPlayer);
